@@ -197,7 +197,7 @@ export default class MainGame extends Phaser.Scene {
         gem.disableBody(true, false);
         const pointStyle: Phaser.Types.GameObjects.Text.TextStyle = { color: '#4090F5', fontSize: 32, stroke: '#FFFFFF', strokeThickness: 8 }
         const point = this.add.text(gem.x, gem.y, gem.getData('point'), pointStyle).setOrigin(0.5).setScale(0.5).setAlpha(0);
-        this.tweens.chain({
+        this.add.tweenchain({
             tweens: [{
                 targets: gem, duration: 300, y: "-=40", scale: 2, alpha: 0, ease: 'power2',
                 onComplete: () => gem.disableBody(true, true)
